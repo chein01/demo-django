@@ -1,0 +1,9 @@
+PENDING = 'pending'
+COMPLETE = 'complete'
+PENDING_VALUE = "Pending"
+COMPLETE_VALUE = "Complete"
+
+STATUS_TASK =(
+    (PENDING, PENDING_VALUE),
+    (COMPLETE, COMPLETE_VALUE)
+)

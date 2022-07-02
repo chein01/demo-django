@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./demo_django"
+    ],
+    "python.formatting.provider": "autopep8"
+}
