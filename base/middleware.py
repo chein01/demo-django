@@ -3,6 +3,7 @@ from django.conf import settings
 from django.db import connection
 import threading
 
+
 class ResponseMiddleWare(object):
     def __init__(self, get_response):
         self.get_response = get_response
@@ -43,7 +44,8 @@ class QueryCountDebugMiddleware(object):
             print(query)
 
         print(
-            "%s queries run, total %s seconds" % (len(connection.queries), total_time)
+            "%s queries run, total %s seconds" % (
+                len(connection.queries), total_time)
         )
 
         return response

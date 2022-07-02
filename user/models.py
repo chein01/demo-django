@@ -1,4 +1,3 @@
-from django.db import models
 import jwt
 import datetime
 from django.db import models
@@ -12,7 +11,6 @@ from base.api.exceptions import PermissionDeniedException, BadRequestException
 from user.choices import ACCESS_TOKEN_TYPE, REFRESH_TOKEN_TYPE, ROLE_USER, CLIENT
 from django.conf import settings
 from base.utils import get_access_token
-from django.contrib.auth.validators import UnicodeUsernameValidator
 # Create your models here.
 
 

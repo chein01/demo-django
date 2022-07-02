@@ -1,20 +1,18 @@
 from datetime import datetime
 from rest_framework.views import APIView
-from rest_framework import generics
-from rest_framework.views import APIView
 from base.api.mixins import CreateModelMixin
 from rest_framework import generics
 from user.models import User
 from user.api.serializers import SignUpSerializer, LoginSerializer
-from base.api.messages import MSG_CREATE_SUCCESS_USER, MSG_SUCCESS
+from base.api.messages import MSG_CREATE_SUCCESS_USER
 from base.api.response import SuccessResponse, ValidationErrorResponse
 from base.api.exceptions import NotFoundException
-from datetime import datetime
 from django.contrib.auth.hashers import check_password, make_password
+
 
 class RegisterView(CreateModelMixin, generics.CreateAPIView):
 
-    success_response =  MSG_CREATE_SUCCESS_USER
+    success_response = MSG_CREATE_SUCCESS_USER
     serializer_class = SignUpSerializer
 
     def get_success_response(self, serializer):
@@ -50,4 +48,4 @@ class LoginView(APIView):
         try:
             return User.objects.get(username=credentials.get("username"))
         except User.DoesNotExist as ex:
-            raise NotFoundException(message= "User not found")
+            raise NotFoundException(message="User not found")

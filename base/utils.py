@@ -10,6 +10,7 @@ from django.core.exceptions import ValidationError
 from django.db.models import F
 from django.conf import settings
 
+
 def get_filename_ext(filepath):
     base_name = os.path.basename(filepath)
     name, ext = os.path.splitext(base_name)
@@ -19,7 +20,8 @@ def get_filename_ext(filepath):
 def base_upload(filename, path="default/file"):
     new_filename = time.time()
     name, ext = get_filename_ext(filename)
-    final_filename = "{new_filename}{ext}".format(new_filename=new_filename, ext=ext)
+    final_filename = "{new_filename}{ext}".format(
+        new_filename=new_filename, ext=ext)
     return "{path}/{final_filename}".format(path=path, final_filename=final_filename)
 
 

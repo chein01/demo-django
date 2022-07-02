@@ -1,8 +1,8 @@
 from rest_framework import serializers
 from user.models import User
 from base.api.exceptions import ValidationException
-from django.contrib.auth.hashers import check_password, make_password
-from django.contrib.auth import password_validation, user_logged_in
+from django.contrib.auth.hashers import make_password
+from django.contrib.auth import password_validation
 import re
 
 

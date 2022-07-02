@@ -160,10 +160,12 @@ REST_FRAMEWORK = {
     ],
 }
 
-APPEND_SLASH=True
+APPEND_SLASH = True
 
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "static_root")
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "media_root")
+STATIC_ROOT = os.path.join(os.path.dirname(
+    BASE_DIR), "static_cdn", "static_root")
+MEDIA_ROOT = os.path.join(os.path.dirname(
+    BASE_DIR), "static_cdn", "media_root")
 
 STATIC_URL = "/static/"
 MEDIA_URL = "/media/"
